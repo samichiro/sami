@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>AR test</title>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+  <a-scene embedded arjs>
+    <!ARに関する部分>
+    <!3Dオブジェクトを表示したい場合>
+  <a-assets>
+    <a-asset-item id="obj" src="img/earth_ball.obj"></a-asset-item> <!-- objファイル -->
+    <a-asset-item id="mtl" src="img/earth_ball.mtl"></a-asset-item> <!-- mtlファイル -->
+  </a-assets>
+  <!3Dオブジェクトを表示したい場合----ここまで>
+  <a-marker preset="hiro">
+    <a-obj-model src="#obj" mtl="#mtl" scale=".01 .01 .01" position="0 1.5 0"></a-obj-model>
+    <!テキストも入れたい場合はa-textタグのvalueに任意の文字列を記述します。>
+    <a-text value=" ARのテストです。" position="0 0 0" align="center"></a-text>
+  </a-marker>
+  <!カメラの起動>
+  <a-entity camera></a-entity>
+  <!カメラの起動----ここまで>
+</a-scene>
+  <!ARに関する部分---ここまで>
+</body>
+</html>
